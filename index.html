@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Rock-Paper-Scissors
+    </title>
+</head>
+
+<main>
+    <body>
+        <script>
+
+      let play = ["Rock", "Paper", "Scissors"];
+
+      let computerPlay = () => {
+        return play[Math.floor(Math.random() * play.length)]
+      };   
+
+      let computerSelection = computerPlay;
+      
+      let playerInput = prompt("Rock, Paper or Scissors?")
+
+      let playerSelection = () => {
+          if(playerInput.toUpperCase() == "ROCK") {
+          return("rock")
+          }
+
+          if(playerInput.toUpperCase() == "PAPER") {
+            return("paper")
+          }
+
+          if(playerInput.toUpperCase() == "SCISSORS") {
+              return("scissors")
+          }
+
+      }
+
+
+      let playRound = () => {
+          if (computerSelection() == playerSelection()) {
+          return("It's a draw");
+          }
+
+          else if (computerSelection() == "Rock" && playerSelection() == "scissors") {
+              return("You lose!");
+          }
+
+          else if (computerSelection() == "Rock" && playerSelection() == "paper") {
+              return("You win!");
+          }
+
+          else if (computerSelection() == "Paper" && playerSelection() == "rock") {
+              return("You lose!");
+          }
+
+          else if (computerSelection() == "Paper" && playerSelection() == "scissors") {
+              return("You win!");
+          }
+
+          else if (computerSelection() == "Scissors" && playerSelection() == "rock") {
+              return("You win!");
+          }
+
+          else if (computerSelection() == "Scissors" && playerSelection() == "paper") {
+              return("You lose!");
+          }
+    
+      }
+
+
+    let game = (round) => {
+        for (let round = 0; round < 5; round++); {
+        console.log(playRound());
+    }
+
+    return winner();
+
+    }
+
+    let winner = () => {
+        if(playerScore > computerScore) {
+            console.log("You win! You beat the computer" + playerScore + "to" + computerScore);
+
+        } else {
+            console.log("You lost against the compurter" + computerScore + "to" + playerScore);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+</main>
